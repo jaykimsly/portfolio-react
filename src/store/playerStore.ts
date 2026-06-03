@@ -7,14 +7,11 @@ export type GameStatus = "boot" | "world_map" | "level" | "scoreboard";
 export type GameCompletion = "started" | "in_progress" | "completed" | "abandoned";
 
 interface PlayerState {
-  // identity
   sessionId: string | null;
   playerName: string;
   playerClass: PlayerClass | null;
-  visitorId: string | null;       // from gateway localStorage
+  visitorId: string | null;
   entrySource: "gateway" | "direct";
-
-  // progression
   xp: number;
   level: number;
   rank: string;
@@ -24,13 +21,9 @@ interface PlayerState {
   achievements: string[];
   levelsVisited: number[];
   timeSpentSeconds: number;
-
-  // ui state
   gameStatus: GameStatus;
   currentLevel: number | null;
   completionStatus: GameCompletion;
-
-  // actions
   initFromGateway: () => void;
   startGame: (name: string, cls: PlayerClass) => Promise<void>;
   awardXP: (amount: number, label?: string) => void;
@@ -44,7 +37,11 @@ interface PlayerState {
   reset: () => void;
 }
 
-const EMPTY: Omit<PlayerState, keyof { initFromGateway: unknown; startGame: unknown; awardXP: unknown; completeQuest: unknown; unlockAchievement: unknown; visitLevel: unknown; setGameStatus: unknown; setCurrentLevel: unknown; markCompleted: unknown; syncToSupabase: unknown; reset: unknown }> = {
+const INITIAL: Omit<PlayerState,
+  "initFromGateway" | "startGame" | "awardXP" | "completeQuest" |
+  "unlockAchievement" | "visitLevel" | "setGameStatus" | "setCurrentLevel" |
+  "markCompleted" | "syncToSupabase" | "reset"
+> = {
   sessionId: null,
   playerName: "",
   playerClass: null,
@@ -67,7 +64,7 @@ const EMPTY: Omit<PlayerState, keyof { initFromGateway: unknown; startGame: unkn
 export const usePlayerStore = create<PlayerState>()(
   persist(
     (set, get) => ({
-      ...EMPTY,
+      ...INITIAL,
 
       initFromGateway: () => {
         try {
@@ -75,19 +72,14 @@ export const usePlayerStore = create<PlayerState>()(
           if (!raw) return;
           const data = JSON.parse(raw);
           if (data.visitor_id) {
-            set({
-              visitorId: data.visitor_id,
-              entrySource: "gateway",
-              playerName: data.name || "",
-            });
+            set({ visitorId: data.visitor_id, entrySource: "gateway", playerName: data.name || "" });
           }
-        } catch {}
+        } catch { /* silent */ }
       },
 
       startGame: async (name, cls) => {
         const { visitorId, entrySource } = get();
         const rank = getRank(0);
-
         let sessionId: string | null = null;
         if (supabase) {
           const { data } = await supabase
@@ -106,24 +98,15 @@ export const usePlayerStore = create<PlayerState>()(
             .single();
           sessionId = data?.id ?? null;
         }
-
         set({
-          sessionId,
-          playerName: name,
-          playerClass: cls,
-          xp: 0,
-          level: 1,
-          rank: rank.label,
-          rankColor: rank.color,
-          nextThreshold: 50,
-          gameStatus: "world_map",
-          completionStatus: "in_progress",
+          sessionId, playerName: name, playerClass: cls,
+          xp: 0, level: 1, rank: rank.label, rankColor: rank.color,
+          nextThreshold: 50, gameStatus: "world_map", completionStatus: "in_progress",
         });
       },
 
       awardXP: (amount) => {
-        const { xp } = get();
-        const newXP = xp + amount;
+        const newXP = get().xp + amount;
         const rank = getRank(newXP);
         set({
           xp: newXP,
@@ -152,8 +135,7 @@ export const usePlayerStore = create<PlayerState>()(
 
       visitLevel: (level) => {
         const { levelsVisited } = get();
-        if (levelsVisited.includes(level)) return;
-        set({ levelsVisited: [...levelsVisited, level] });
+        if (!levelsVisited.includes(level)) set({ levelsVisited: [...levelsVisited, level] });
       },
 
       setGameStatus: (status) => set({ gameStatus: status }),
@@ -165,27 +147,27 @@ export const usePlayerStore = create<PlayerState>()(
       },
 
       syncToSupabase: async () => {
-        const { sessionId, xp, level, rank, questsCompleted, achievements, levelsVisited, timeSpentSeconds, completionStatus } = get();
-        if (!supabase || !sessionId) return;
+        const s = get();
+        if (!supabase || !s.sessionId) return;
         await supabase.from("game_sessions").update({
-          xp,
-          level,
-          rank,
-          quests_completed: questsCompleted,
-          achievements,
-          levels_visited: levelsVisited,
-          time_spent_seconds: timeSpentSeconds,
-          game_status: completionStatus,
+          xp: s.xp,
+          level: s.level,
+          rank: s.rank,
+          quests_completed: s.questsCompleted,
+          achievements: s.achievements,
+          levels_visited: s.levelsVisited,
+          time_spent_seconds: s.timeSpentSeconds,
+          game_status: s.completionStatus,
           last_active_at: new Date().toISOString(),
-          completed_at: completionStatus === "completed" ? new Date().toISOString() : null,
-        }).eq("id", sessionId);
+          completed_at: s.completionStatus === "completed" ? new Date().toISOString() : null,
+        }).eq("id", s.sessionId);
       },
 
-      reset: () => set({ ...EMPTY }),
+      reset: () => set({ ...INITIAL }),
     }),
     {
       name: "jm_game_session",
-      partializer: (state) => ({
+      partialize: (state) => ({
         sessionId: state.sessionId,
         playerName: state.playerName,
         playerClass: state.playerClass,
@@ -201,6 +183,6 @@ export const usePlayerStore = create<PlayerState>()(
         levelsVisited: state.levelsVisited,
         completionStatus: state.completionStatus,
       }),
-    } as Parameters<typeof persist>[1]
+    }
   )
 );

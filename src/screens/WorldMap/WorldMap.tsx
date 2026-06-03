@@ -81,12 +81,12 @@ export function WorldMap({ onEnterLevel, onViewScoreboard }: Props) {
               >
                 <GlassCard
                   hover
-                  glow={completed || visited ? theme.primary : undefined}
-                  accentColor={completed || visited ? theme.primary : undefined}
+                  glow={completed || visited ? theme.color : undefined}
+                  accentColor={completed || visited ? theme.color : undefined}
                   onClick={() => onEnterLevel(lvl.id)}
                   className="p-5 border cursor-pointer h-full"
                   style={{
-                    borderColor: completed ? theme.primary + "50" : visited ? theme.primary + "25" : "rgba(255,255,255,0.06)",
+                    borderColor: completed ? theme.color + "50" : visited ? theme.color + "25" : "rgba(255,255,255,0.06)",
                   }}
                 >
                   <div className="flex items-start justify-between mb-4">
@@ -94,7 +94,7 @@ export function WorldMap({ onEnterLevel, onViewScoreboard }: Props) {
                     <StatusBadge status={status} />
                   </div>
 
-                  <ZoneBadge zone={lvl.id} color={theme.primary} />
+                  <ZoneBadge zone={lvl.id} color={theme.color} />
 
                   <h3 className="text-white font-bold text-xl mt-2 mb-1.5 tracking-tight">
                     {lvl.title}
@@ -102,12 +102,12 @@ export function WorldMap({ onEnterLevel, onViewScoreboard }: Props) {
                   <p className="text-zinc-400 text-sm leading-relaxed mb-4">{lvl.desc}</p>
 
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono" style={{ color: theme.primary + "99" }}>
+                    <span className="text-xs font-mono" style={{ color: theme.color + "99" }}>
                       Up to {lvl.maxXP.toLocaleString()} XP
                     </span>
                     <motion.span
                       className="text-xs font-semibold"
-                      style={{ color: theme.primary }}
+                      style={{ color: theme.color }}
                       whileHover={{ x: 3 }}
                     >
                       Enter →
