@@ -19,7 +19,7 @@ import "./index.css";
 const KONAMI = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];
 
 export default function App() {
-  const { gameStatus, currentLevel, setGameStatus, setCurrentLevel, visitLevel, unlockAchievement, timeSpentSeconds } = usePlayerStore();
+  const { gameStatus, currentLevel, setGameStatus, setCurrentLevel, visitLevel, unlockAchievement } = usePlayerStore();
   const { award, events } = useXP();
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const konamiRef = useRef<string[]>([]);
