@@ -5,18 +5,18 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
-    rollupOptions: {
+    chunkSizeWarningLimit: 600,
+    rolldownOptions: {
       output: {
-        manualChunks: {
-          'vendor-react':    ['react', 'react-dom', 'react-router-dom'],
-          'vendor-motion':   ['framer-motion'],
-          'vendor-three':    ['three', '@react-three/fiber', '@react-three/drei'],
-          'vendor-radix':    ['@radix-ui/react-dialog', '@radix-ui/react-progress', '@radix-ui/react-tooltip', '@radix-ui/react-tabs'],
-          'vendor-supabase': ['@supabase/supabase-js'],
-          'vendor-state':    ['zustand'],
+        manualChunks(id: string) {
+          if (id.includes('three') || id.includes('@react-three')) return 'vendor-three';
+          if (id.includes('framer-motion'))                          return 'vendor-motion';
+          if (id.includes('@supabase'))                              return 'vendor-supabase';
+          if (id.includes('@radix-ui'))                              return 'vendor-radix';
+          if (id.includes('zustand'))                                return 'vendor-state';
+          if (id.includes('node_modules'))                           return 'vendor';
         },
       },
     },
-    chunkSizeWarningLimit: 600,
   },
 })
