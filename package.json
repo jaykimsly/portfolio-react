@@ -4,7 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "sync-content": "node scripts/sync-content.mjs src/content/content.json",
+    "predev": "npm run sync-content",
     "dev": "vite",
+    "prebuild": "npm run sync-content",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"

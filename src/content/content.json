@@ -1,0 +1,469 @@
+{
+  "version": 1,
+  "person": {
+    "name": "Joachim Nkhululeko Mhlongo",
+    "shortName": "Joachim",
+    "title": "Full Stack Software Developer",
+    "location": "Johannesburg, South Africa",
+    "languages": [
+      "English",
+      "isiZulu",
+      "siSwati"
+    ],
+    "profileImage": "https://res.cloudinary.com/jaykimsly/image/upload/v1668129061/Portfolio/2017-06-19-15-34-49-383_e2hhjo.jpg",
+    "aboutImage": "https://res.cloudinary.com/jaykimsly/image/upload/v1668129061/Portfolio/IMG_20200922_090340_w8hwc3.jpg",
+    "siteUrl": "https://www.jaykimsly.co.za",
+    "summary": "Full stack software developer building practical, scalable web applications across frontend, backend, databases and the cloud.",
+    "headlines": [
+      "Hi, I'm Joachim Mhlongo",
+      "Full Stack Developer | C# · .NET · TypeScript · Azure",
+      "Available for hire: permanent roles and project contracts",
+      "<Wanted To Be A Ninja But Chose Code Instead />"
+    ],
+    "bio": [
+      "I build practical, scalable web applications end to end: frontend, APIs, databases, cloud and the pipelines in between.",
+      "My experience covers enterprise web development with C# and ASP.NET, frontends in Vue.js, Angular and React, Node.js backends, SQL Server and PostgreSQL databases, Azure Function Apps, and deployment through Azure DevOps.",
+      "I do my best work on hard problems: improving systems end to end and shipping clean code that does what the business needs. I review code across teams, mentor developers and help unblock technical work.",
+      "I'm open to permanent roles and contract work, and I also help small businesses with computer repair, IT advice, websites and custom applications. Call or WhatsApp me."
+    ]
+  },
+  "phones": [
+    {
+      "number": "+27833589828",
+      "display": "+27 83 358 9828",
+      "calls": true,
+      "whatsapp": true
+    },
+    {
+      "number": "+27837824119",
+      "display": "+27 83 782 4119",
+      "calls": true,
+      "whatsapp": false
+    }
+  ],
+  "socials": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/jaykimsly"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/jaykimsly"
+    },
+    {
+      "label": "X",
+      "url": "https://x.com/JayKimSly"
+    },
+    {
+      "label": "GitLab",
+      "url": "https://gitlab.com/jaykimsly"
+    },
+    {
+      "label": "Instagram",
+      "url": "https://instagram.com/jaykimsly"
+    }
+  ],
+  "services": [
+    {
+      "name": "Computer Repair",
+      "description": "Diagnosis, repairs, upgrades and clean installs for desktops and laptops."
+    },
+    {
+      "name": "IT Consulting",
+      "description": "Practical advice on systems, cloud, software choices and getting your business online."
+    },
+    {
+      "name": "Web Development",
+      "description": "Fast, responsive websites and web apps, from a single landing page to a full platform."
+    },
+    {
+      "name": "Application Development",
+      "description": "Custom business applications: APIs, databases, dashboards and integrations, built to last."
+    }
+  ],
+  "experience": [
+    {
+      "company": "Digital Solution Foundry",
+      "role": "Software Developer",
+      "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQEQb8dJUvgzpA/company-logo_200_200/company-logo_200_200/0/1630570227521/digital_solution_foundry_logo",
+      "start": "2023-03",
+      "end": null,
+      "period": "March 2023 - Present",
+      "stack": [
+        {
+          "name": "C#",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+        },
+        {
+          "name": ".NET",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg"
+        },
+        {
+          "name": "Vue.js",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+        },
+        {
+          "name": "Flutter",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
+        },
+        {
+          "name": "SQL Server",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
+        },
+        {
+          "name": "Azure",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+        }
+      ],
+      "points": [
+        "Built and maintained enterprise web applications with C#, ASP.NET MVC, ASP.NET Web API, .NET Core, Vue.js 3, Flutter and SQL Server",
+        "Contributed to the architecture of case management and workflow platforms",
+        "Engineered Azure Function Apps, including a production speech-to-text pipeline",
+        "Managed cloud resources in Azure and deployments through Azure DevOps Server",
+        "Delivered features for an evidence-mapping product, including machine-learning integrations",
+        "Designed Power BI data models for reporting",
+        "Reviewed pull requests across several codebases and mentored team members in an agile team"
+      ]
+    },
+    {
+      "company": "The Digital Academy",
+      "role": "Full Stack Developer Intern",
+      "logo": "https://ui-avatars.com/api/?name=Digital+Academy&background=2563eb&color=fff&size=200&font-size=0.33",
+      "start": "2022-06",
+      "end": "2023-05",
+      "period": "June 2022 - May 2023",
+      "stack": [
+        {
+          "name": "Angular",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+        },
+        {
+          "name": "Node.js",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+        },
+        {
+          "name": "PostgreSQL",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+        },
+        {
+          "name": "Docker",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+        },
+        {
+          "name": "React",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+        }
+      ],
+      "points": [
+        "Built full-stack applications with Angular 2+, Bootstrap, Node.js and PostgreSQL",
+        "Designed wireframes and interfaces in Figma",
+        "Delivered responsive applications on the MEAN and PERN stacks",
+        "Used Git, Docker and Heroku for version control and deployment",
+        "Led team projects and mentored fellow developers"
+      ]
+    },
+    {
+      "company": "Tshwane University of Technology",
+      "role": "Student Assistant",
+      "logo": "https://ui-avatars.com/api/?name=TUT&background=006400&color=fff&size=200&font-size=0.4",
+      "start": "2019-03",
+      "end": "2019-12",
+      "period": "March 2019 - December 2019",
+      "stack": [
+        {
+          "name": "C++",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+        },
+        {
+          "name": "Java",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+        }
+      ],
+      "points": [
+        "Taught programming fundamentals, object-oriented programming and data structures",
+        "Supported students with languages, development environments and troubleshooting in practical labs",
+        "Assisted faculty with system administration and lab setup"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "C#",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+      "proficiency": 80
+    },
+    {
+      "name": ".NET",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg",
+      "proficiency": 80
+    },
+    {
+      "name": "TypeScript",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      "proficiency": 85
+    },
+    {
+      "name": "JavaScript",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      "proficiency": 85
+    },
+    {
+      "name": "Vue.js",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+      "proficiency": 80
+    },
+    {
+      "name": "Angular",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
+      "proficiency": 75
+    },
+    {
+      "name": "React",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      "proficiency": 85
+    },
+    {
+      "name": "Next.js",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      "proficiency": 80
+    },
+    {
+      "name": "Flutter",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg",
+      "proficiency": 70
+    },
+    {
+      "name": "Tailwind CSS",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+      "proficiency": 90
+    },
+    {
+      "name": "Azure",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
+      "proficiency": 75
+    },
+    {
+      "name": "Docker",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+      "proficiency": 70
+    },
+    {
+      "name": "SQL Server",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg",
+      "proficiency": 80
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+      "proficiency": 75
+    },
+    {
+      "name": "Node.js",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      "proficiency": 80
+    },
+    {
+      "name": "Git",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      "proficiency": 85
+    }
+  ],
+  "projects": [
+    {
+      "name": "Magobholi",
+      "description": "Responsive business website presenting the brand, its services and how to get in touch.",
+      "language": "TypeScript",
+      "tags": [
+        "business",
+        "website"
+      ],
+      "repo": "https://github.com/jaykimsly/magobholi",
+      "url": "https://www.magobholi.co.za",
+      "portfolios": [
+        "services"
+      ]
+    },
+    {
+      "name": "Portfolio (Next.js)",
+      "description": "This site: a Next.js and Tailwind CSS portfolio rendered from a shared content.json.",
+      "language": "TypeScript",
+      "tags": [
+        "nextjs",
+        "portfolio"
+      ],
+      "repo": "https://github.com/jaykimsly/portfolio-next",
+      "url": "https://www.jaykimsly.co.za",
+      "portfolios": [
+        "frontend",
+        "fullstack"
+      ]
+    },
+    {
+      "name": "Portfolio Hub",
+      "description": "The hub that links every framework version of this portfolio.",
+      "language": "TypeScript",
+      "tags": [
+        "hub",
+        "portfolio"
+      ],
+      "repo": "https://github.com/jaykimsly/portfolio-gateway",
+      "url": "https://hub.jaykimsly.co.za",
+      "portfolios": [
+        "fullstack"
+      ]
+    },
+    {
+      "name": "Portfolio (Vue)",
+      "description": "The same portfolio built with Vue.js.",
+      "language": "Vue",
+      "tags": [
+        "vue",
+        "portfolio"
+      ],
+      "repo": "https://github.com/jaykimsly/portfolio-vue",
+      "url": "https://vue.jaykimsly.co.za",
+      "portfolios": [
+        "frontend",
+        "services"
+      ]
+    },
+    {
+      "name": "Portfolio (Blazor)",
+      "description": "The same portfolio built with Blazor WebAssembly and C#.",
+      "language": "C#",
+      "tags": [
+        "blazor",
+        "portfolio"
+      ],
+      "repo": "https://github.com/jaykimsly/portfolio-blazor",
+      "url": "https://blazor.jaykimsly.co.za",
+      "portfolios": [
+        "backend"
+      ]
+    },
+    {
+      "name": "Eduscope",
+      "description": "Educational platform demo with dynamic content and a modern UI.",
+      "language": "TypeScript",
+      "tags": [
+        "education",
+        "demo"
+      ],
+      "repo": "https://github.com/jaykimsly/eduscope",
+      "url": "https://eduscope.vercel.app",
+      "portfolios": [
+        "systems",
+        "frontend"
+      ]
+    },
+    {
+      "name": "Hospital Management System",
+      "description": "Full-stack hospital management system with patient records, scheduling and admin dashboards.",
+      "language": "TypeScript",
+      "tags": [
+        "healthcare",
+        "management"
+      ],
+      "repo": "https://github.com/jaykimsly/Hospital-Management-System",
+      "url": "https://hospital-management-system-phi.vercel.app",
+      "portfolios": [
+        "systems",
+        "fullstack"
+      ]
+    },
+    {
+      "name": "Email Signature Generator",
+      "description": "Tool for generating professional email signatures.",
+      "language": "JavaScript",
+      "tags": [
+        "tool"
+      ],
+      "repo": "https://github.com/jaykimsly/email-signature-generator",
+      "url": "https://email-signature-generator-drab.vercel.app",
+      "portfolios": [
+        "frontend",
+        "services"
+      ]
+    },
+    {
+      "name": "Bottle Store Frontend",
+      "description": "E-commerce frontend with a product catalogue, cart and responsive UI.",
+      "language": "TypeScript",
+      "tags": [
+        "ecommerce",
+        "frontend"
+      ],
+      "repo": "https://github.com/jaykimsly/bottleStore_frontend",
+      "url": "https://bottle-store-frontend.vercel.app",
+      "portfolios": [
+        "systems",
+        "frontend"
+      ]
+    },
+    {
+      "name": "Final Project",
+      "description": "Capstone full-stack application covering end-to-end development.",
+      "language": "JavaScript",
+      "tags": [
+        "capstone"
+      ],
+      "repo": "https://github.com/jaykimsly/FinalXongie",
+      "url": "https://final-project-six-alpha.vercel.app",
+      "portfolios": [
+        "fullstack"
+      ]
+    }
+  ],
+  "hub": {
+    "url": "https://hub.jaykimsly.co.za",
+    "title": "Five portfolios, one developer",
+    "text": "Pick the one that fits what you need. Each is built in a different framework."
+  },
+  "portfolios": [
+    {
+      "id": "services",
+      "title": "Side hustle & IT services",
+      "audience": "Small businesses and individuals",
+      "pitch": "Websites for small businesses, computer repair and IT support.",
+      "framework": "Vue",
+      "url": "https://vue.jaykimsly.co.za",
+      "status": "live"
+    },
+    {
+      "id": "systems",
+      "title": "Systems & e-commerce",
+      "audience": "Businesses that need a system built",
+      "pitch": "Online shops, booking and management systems, built end to end.",
+      "framework": "Angular",
+      "url": "https://angular.jaykimsly.co.za",
+      "status": "live"
+    },
+    {
+      "id": "frontend",
+      "title": "Frontend",
+      "audience": "Teams hiring a frontend developer",
+      "pitch": "Responsive, accessible interfaces in React, Vue and Angular.",
+      "framework": "React",
+      "url": "https://react.jaykimsly.co.za",
+      "status": "soon"
+    },
+    {
+      "id": "backend",
+      "title": "Backend",
+      "audience": "Teams hiring a backend developer",
+      "pitch": "APIs, databases and cloud functions in C#, .NET and SQL Server.",
+      "framework": "Blazor",
+      "url": "https://blazor.jaykimsly.co.za",
+      "status": "live"
+    },
+    {
+      "id": "fullstack",
+      "title": "Full stack & DevOps",
+      "audience": "Teams hiring a full stack or DevOps engineer",
+      "pitch": "From UI to database to pipelines: Azure, Docker and CI/CD.",
+      "framework": "Svelte",
+      "url": "https://svelte.jaykimsly.co.za",
+      "status": "live"
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { usePlayerStore } from "../../store/playerStore";
 import { WORLD_THEMES } from "../../lib/constants";
 import { GlassCard, GlowButton, ProgressBar, StatusBadge, ZoneBadge, StatPill } from "../../components/ui/GameUI";
+import { ContactPanel } from "../../components/ContactPanel";
 
 const LEVELS = [
   { id: 1, title: "Origin Story",         desc: "Career timeline — from university to production",  icon: "📜", maxXP: 250  },
@@ -126,6 +127,8 @@ export function WorldMap({ onEnterLevel, onViewScoreboard }: Props) {
           </GlowButton>
           <p className="text-zinc-600 text-sm mt-3">See where you rank against other adventurers</p>
         </div>
+
+        <ContactPanel />
       </div>
     </div>
   );

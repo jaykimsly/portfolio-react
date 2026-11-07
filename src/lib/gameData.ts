@@ -1,41 +1,42 @@
+import { content } from "../content/content";
+
 // ── Level 1: Timeline ─────────────────────────────────────────
+// Education is game-only; the jobs come from the shared content.json, oldest first.
+const EDUCATION = {
+  id: "tut",
+  year: "2016–2019",
+  title: "Tshwane University of Technology",
+  role: "National Diploma: Information Technology",
+  detail: "Specialised in Intelligent Industrial Systems: software development, OOP, data structures and systems.",
+  icon: "🎓",
+  xp: 40,
+};
+
+// Keeps the quest IDs that returning players already have in their saved progress.
+const JOB_QUESTS: Record<string, { id: string; icon: string; xp: number }> = {
+  "Tshwane University of Technology": { id: "tut_assistant", icon: "👨‍🏫", xp: 40 },
+  "The Digital Academy": { id: "digital_academy", icon: "🚀", xp: 50 },
+  "Digital Solution Foundry": { id: "dsf", icon: "🏢", xp: 70 },
+};
+
 export const TIMELINE = [
-  {
-    id: "tut",
-    year: "2017–2022",
-    title: "Tshwane University of Technology",
-    role: "B-Tech: Information Technology",
-    detail: "Specialised in software development, OOP, data structures, and systems architecture.",
-    icon: "🎓",
-    xp: 40,
-  },
-  {
-    id: "tut_assistant",
-    year: "Mar 2019 – Dec 2019",
-    title: "Student Assistant · TUT",
-    role: "C++ & Java Instructor",
-    detail: "Taught OOP and data structures. Mentored students, ran lab sessions, supported faculty with curriculum resources.",
-    icon: "👨‍🏫",
-    xp: 40,
-  },
-  {
-    id: "digital_academy",
-    year: "Jun 2022 – May 2023",
-    title: "The Digital Academy",
-    role: "Full Stack Developer Intern",
-    detail: "Built full-stack apps on MEAN & PERN stacks. Angular, Node.js, PostgreSQL, Docker, React, Figma wireframes.",
-    icon: "🚀",
-    xp: 50,
-  },
-  {
-    id: "dsf",
-    year: "Mar 2023 – Present",
-    title: "Digital Solution Foundry",
-    role: "Software Developer",
-    detail: "Enterprise systems: .NET Core, C#, Vue.js 3, Flutter, SQL Server. Azure DevOps, Speech-to-Text pipelines, Power BI, EPPI Mapper (University of London).",
-    icon: "🏢",
-    xp: 70,
-  },
+  EDUCATION,
+  ...[...content.experience].reverse().map((job) => {
+    const quest = JOB_QUESTS[job.company] ?? {
+      id: `${job.company}-${job.start}`.toLowerCase().replace(/[^a-z0-9]+/g, "_"),
+      icon: "💼",
+      xp: 50,
+    };
+    return {
+      id: quest.id,
+      year: job.period,
+      title: job.company,
+      role: job.role,
+      detail: `${job.points.join(". ")}.`,
+      icon: quest.icon,
+      xp: quest.xp,
+    };
+  }),
 ];
 
 // ── Level 2: Skill Tree ───────────────────────────────────────
@@ -73,7 +74,7 @@ export const SKILL_TREE = [
   {
     id: "nextjs",    label: "Next.js",     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
     proficiency: 80, category: "frontend",  years: "2+",
-    detail: "App Router, SSR, ISR, API routes. Portfolio gateway and this portfolio are built on it.",
+    detail: "App Router, SSR, ISR, API routes. The main portfolio at www.jaykimsly.co.za and the portfolio hub are built on it.",
     unlocks: [],
   },
   {
@@ -133,17 +134,17 @@ export const CATEGORY_COLORS: Record<SkillCategory, string> = {
 export const BOSS_PROJECTS = [
   {
     id: "portfolio_gateway",
-    name: "Portfolio Gateway",
+    name: "Portfolio Hub",
     emoji: "🌐",
     hp: 400,
     difficulty: "LEGENDARY",
     stack: ["Next.js", "TypeScript", "Supabase", "Framer Motion"],
-    description: "Adaptive portfolio platform with visitor onboarding, analytics, AI-ready architecture, and multi-framework showcase.",
-    url: "https://jaykimsly.co.za",
-    github: "https://github.com/jaykimsly",
+    description: "Hub for five focused portfolios, each built in a different framework, with private visitor analytics.",
+    url: "https://hub.jaykimsly.co.za",
+    github: "https://github.com/jaykimsly/portfolio-gateway",
     attacks: [
       { id: "architecture", label: "View Architecture",  damage: 100, xp: 80 },
-      { id: "onboarding",   label: "Explore Onboarding", damage: 100, xp: 60 },
+      { id: "onboarding",   label: "Browse the Portfolios", damage: 100, xp: 60 },
       { id: "analytics",    label: "Check Analytics",    damage: 100, xp: 60 },
       { id: "live",         label: "Visit Live Site",    damage: 100, xp: 80 },
     ],
@@ -155,7 +156,7 @@ export const BOSS_PROJECTS = [
     hp: 500,
     difficulty: "BOSS",
     stack: [".NET Core", "C#", "Vue.js 3", "SQL Server", "Azure"],
-    description: "Production enterprise system at DSF — Pace & Case Management platforms, Azure Function Apps, Speech-to-Text pipeline, Power BI reporting.",
+    description: "Production enterprise systems at DSF: case management and workflow platforms, Azure Function Apps, a speech-to-text pipeline and Power BI reporting.",
     url: null,
     github: null,
     attacks: [
@@ -167,18 +168,18 @@ export const BOSS_PROJECTS = [
   },
   {
     id: "magobholi",
-    name: "Magobholi Platform",
+    name: "Magobholi",
     emoji: "🦁",
     hp: 300,
     difficulty: "ELITE",
-    stack: ["Next.js", "Prisma", "Supabase", "Stripe", "TypeScript"],
-    description: "Full e-commerce platform with product management, Stripe payments, order management, and admin dashboard.",
-    url: "https://magobholi.co.za",
+    stack: ["React", "TypeScript"],
+    description: "Responsive business website presenting the brand, its services and how to get in touch.",
+    url: "https://www.magobholi.co.za",
     github: "https://github.com/jaykimsly/magobholi",
     attacks: [
-      { id: "ecommerce", label: "Explore Store",      damage: 100, xp: 70 },
-      { id: "payments",  label: "Review Stripe Flow", damage: 100, xp: 80 },
-      { id: "admin",     label: "Check Admin Panel",  damage: 100, xp: 70 },
+      { id: "ecommerce", label: "Explore the Site",      damage: 100, xp: 70 },
+      { id: "payments",  label: "Check Responsive Layout", damage: 100, xp: 80 },
+      { id: "admin",     label: "Review the Brand",  damage: 100, xp: 70 },
     ],
   },
   {
